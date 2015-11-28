@@ -23,7 +23,7 @@ mkdir -p /usr/src/icecast
 cd /usr/src/icecast
 wget https://github.com/karlheyes/icecast-kh/archive/master.zip 
 unzip master.zip
-cd master.zip
+cd icecast-kh-master/
 
 echo -e "\n --------Compile and Install--------\n"
 sleep 3
@@ -43,7 +43,7 @@ chown -R icecast:icecast /var/run/icecast
 
 
 echo -e "\n --------icecast.xml--------\n"
-
+cp /usr/src/icecast/icecast-kh-master/examples/icecast.xml /usr/local/etc/
 cd /usr/local/etc/
 nano icecast.xml
 
