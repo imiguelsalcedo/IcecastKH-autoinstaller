@@ -43,8 +43,9 @@ chown -R icecast:icecast /var/run/icecast
 
 
 echo -e "\n --------icecast.xml--------\n"
-cp /usr/src/icecast/icecast-kh-master/examples/icecast.xml /usr/local/etc/
+cp /usr/src/icecast/icecast-kh-master/examples/icecast.xml /usr/local/etc/icecast.bak.xml
 cd /usr/local/etc/
+wget https://puntohost.com/files/icecast.xml
 nano icecast.xml
 
 echo -e "Start server= /usr/local/bin/icecast -c /usr/local/etc/icecast.xml -b"
