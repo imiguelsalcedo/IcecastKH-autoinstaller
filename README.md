@@ -1,1 +1,2 @@
-icecastkh-autoinstall
+Icecast-KH autoinstall CentOS
+===========
