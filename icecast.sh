@@ -2,6 +2,16 @@
 # -*- ENCODING: UTF-8 -*-
 # Miguel Salcedo <imiguelsalcedo at hotmail dot com>
 
+clear
+echo "+=====================================================================+"
+echo "|                         IcecastKH-autoinstaller                     |"
+echo "+=====================================================================+"
+echo "|                          System Update                              |"
+echo "|                Installation of development tools                    |"
+echo "|                  Compilation and Installation                       |"
+echo "|                            Settings                                 |"
+echo "+=====================================================================+"
+
 # Update
 echo -e "\n --------In five seconds the system upgrade will start--------\n"
 sleep 5
@@ -33,7 +43,7 @@ make install
 
 ls /usr/local/bin/
 
-echo -e "\n --------Installing dependencies--------\n"
+echo -e "\n --------Settings--------\n"
 sleep 3
 groupadd -g 200 icecast
 useradd -d /var/log/icecast -m -g icecast -s /bin/bash -u 200 icecast
