@@ -1,0 +1,93 @@
+<icecast>
+    <location>Country</location>
+    <admin>soporte@puntohost.com</admin>
+
+    <limits>
+        <clients>10000</clients>     
+        <sources>100</sources>
+
+        <queue-size>524288</queue-size>
+        <client-timeout>30</client-timeout>
+        <header-timeout>15</header-timeout>
+        <source-timeout>10</source-timeout>
+        <burst-size>65535</burst-size>
+        <!--
+        <max-bandwidth>420000M</max-bandwidth>
+        -->
+    </limits>
+
+     <authentication>
+        <!-- Sources log in with username 'source' -->
+        <source-password>source-pass</source-password>
+        <!-- Relays log in username 'relay' -->
+        <relay-password>relay-pass</relay-password>
+
+        <!-- Admin logs in with the username given below -->
+        <admin-user>administrator</admin-user>
+        <admin-password>pass-admin</admin-password>
+    </authentication>
+
+   <hostname>localhost</hostname>
+
+    <!-- You may have multiple <listener> elements -->
+    <listen-socket>
+        <port>8000</port>
+    </listen-socket>
+ 
+   <fileserve>1</fileserve>
+
+   <!-- PATHES -->
+    <paths>
+        <basedir>/usr/src/icecast/icecast-kh-master</basedir>
+        <webroot>/usr/src/icecast/icecast-kh-master/web</webroot>
+        <adminroot>/usr/src/icecast/icecast-kh-master/admin</adminroot>
+        <logdir>/var/log/icecast</logdir>
+         
+         
+        <alias source="/" dest="/index.html"/>
+    
+
+        <!-- Aliases: treat requests for 'source' path as being for 'dest' path
+             May be made specific to a port or bound address using the "port"
+             and "bind-address" attributes.
+          -->
+        <!--
+        <alias source="/foo" dest="/bar"/>
+          -->
+        <!-- Aliases: can also be used for simple redirections as well,
+             this example will redirect all requests for http://server:port/ to
+             the status page
+          -->
+        
+    </paths>
+
+<!--	MOUNT POINTS --> 
+     <mount>
+       <mount-name>/live.ogg</mount-name>
+        <password>hackme</password>
+        <stream-name>Live Radio</stream-name>
+        <stream-description>Live Radio</stream-description>
+        <stream-url>https://puntohost.com</stream-url>
+        <max-listeners>100</max-listeners>
+        <public>1</public>
+    </mount>
+<!--	MOUNT POINTS --> 
+
+    <logging>
+       <accesslog>access.log</accesslog>
+       <errorlog>error.log</errorlog>
+       <playlistlog>playlist.log</playlistlog>
+       <loglevel>1</loglevel>
+       <logsize>10000</logsize>
+       <logarchive>1</logarchive>
+     </logging>
+
+    <security>
+     <chroot>0</chroot>
+       <changeowner>
+         <user>icecast</user>
+         <group>icecast</group>
+       </changeowner>
+        
+    </security>
+</icecast> 
